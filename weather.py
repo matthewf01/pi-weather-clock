@@ -66,7 +66,7 @@ def Clock_display():
   hour = now.hour
   minute = now.minute
   second = now.second
-  lcd_ready()
+  LCD_ready()
   currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
   lcd.message(currenttime)
   time.sleep(1)
