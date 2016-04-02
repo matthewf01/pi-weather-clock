@@ -1,12 +1,12 @@
 import time
 
 def foo():
- While(True):
+ while(True):
   print ("foo")
   time.sleep(2)
   
 def bar():
- While(True):
+ while(True):
   print ("bar")
   time.sleep(2)
   
