@@ -107,8 +107,9 @@ LCD_ready()
 
 if __name__ == '__main__':
     Thread(target = Clock_display).start()
+    Thread(target = read_json_conditions).start()
     Thread(target = lcd_show_data).start()
-#read_json_conditions()
+
 
 #####################################################
 
