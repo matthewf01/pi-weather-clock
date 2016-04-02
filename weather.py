@@ -103,6 +103,7 @@ def lcd_show_data():
 time.sleep(3)
 LCD_enable()
 LCD_ready()
+read_json_conditions()
 
 if __name__ == '__main__':
     Thread(target = Clock_display).start()
