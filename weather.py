@@ -74,28 +74,30 @@ def Clock_display():
   # print(currenttime)
   time.sleep(1)
 
-'''
+
 #JSON parsing
 def read_json_conditions():
   while(True):
    json_cond_text = open(conditions_api_file)
    parsed_cond_json = json.load(json_cond_text)
+   global weather
+   global tempf
    weather = parsed_cond_json['current_observation']['weather']
    tempf = str(parsed_cond_json['current_observation']['temp_f'])
    print("{} -- READ FILE: {}".format(currenttime,conditions_api_file))
    print("{} -- {}degF".format(weather,tempf))
    time.sleep(60)
-'''
+
 
 #write to display
 def lcd_show_data():
  while(True):
-  #LCD_ready()
-  #lcd.set_cursor(0,1)
+  LCD_ready()
+  lcd.set_cursor(0,1)
   lcd.message(currenttime)
   print ("wrote to lcd")
-  #lcd.set_cursor(1,1)
-#  lcd.message("{},{}degF`".format(weather,tempf))
+  lcd.set_cursor(1,1)
+  lcd.message("{},{}degF`".format(weather,tempf))
   time.sleep(1)
 #####################################################
 
