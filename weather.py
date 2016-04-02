@@ -105,9 +105,7 @@ LCD_ready()
 if __name__ == '__main__':
     Thread(target = Clock_display).start()
     Thread(target = lcd_show_data).start()
-Clock_display()
 #read_json_conditions()
-lcd_show_data()
 
 #####################################################
 gpio.cleanup()
