@@ -71,6 +71,7 @@ def Clock_display():
   currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
   time.sleep(1)
 
+''''''''''''''''
 #JSON parsing
 def read_json_conditions():
   while(True):
@@ -81,7 +82,7 @@ def read_json_conditions():
    print("{} -- READ FILE: {}".format(currenttime,conditions_api_file))
    print("{} -- {}degF".format(weather,tempf))
    time.sleep(60)
-   
+''''''''''''''''
 
 #write to display
 def lcd_show_data():
@@ -90,7 +91,7 @@ def lcd_show_data():
   lcd.set_cursor(0,1)
   lcd.message(currenttime)
   lcd.set_cursor(1,1)
-  lcd.message("{},{}degF`".format(weather,tempf))
+#  lcd.message("{},{}degF`".format(weather,tempf))
   time.sleep(1)
 #####################################################
 
@@ -98,7 +99,7 @@ time.sleep(60)
 LCD_enable()
 LCD_ready()
 Clock_display()
-read_json_conditions()
+#read_json_conditions()
 lcd_show_data()
 
 #####################################################
