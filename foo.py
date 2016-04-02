@@ -11,5 +11,5 @@ def bar():
   time.sleep(2)
   
   
-  foo()
-  bar()
+  foo(True)
+  bar(True)
