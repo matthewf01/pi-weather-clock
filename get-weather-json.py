@@ -14,7 +14,7 @@ def urlget():
   timenow = time.strftime("%X")
   datenow = time.strftime("%x")
   #UNCOMMENT THIS WHEN READY TO PULL NEW WEATHER DATA; COMMENTED OUT FOR TESTING
-  #urllib.urlretrieve(weather_conditions_url, weather_working_dir)
+  urllib.urlretrieve(weather_conditions_url, weather_working_dir)
   print("{} | {} || Weather Condition JSON retrieved for {}/{}".format(datenow, timenow, weather_state,weather_city))
   time.sleep(900)
 
