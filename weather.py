@@ -5,6 +5,8 @@ import time
 import math
 import datetime
 import os
+import threading
+from threading import Thread
  
 #imports modules for 16x2 character LCD
 import Adafruit_CharLCD as LCD
@@ -99,6 +101,10 @@ def lcd_show_data():
 time.sleep(3)
 LCD_enable()
 LCD_ready()
+
+if __name__ == '__main__':
+    Thread(target = Clock_display).start()
+    Thread(target = lcd_show_data).start()
 Clock_display()
 #read_json_conditions()
 lcd_show_data()
