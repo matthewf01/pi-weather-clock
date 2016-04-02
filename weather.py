@@ -70,7 +70,7 @@ def Clock_display():
   minute = now.minute
   second = now.second
   global currenttime
-  currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
+  currenttime="TIME: {}:{}".format(hour,minute) 
   # print(currenttime)
   time.sleep(1)
 
@@ -95,10 +95,9 @@ def lcd_show_data():
   LCD_ready()
   lcd.set_cursor(0,0)
   lcd.message(currenttime)
-  print ("wrote to lcd")
   lcd.set_cursor(0,1)
   lcd.message("{},{}F".format(weather,tempf))
-  time.sleep(1)
+  time.sleep(10)
 #####################################################
 
 time.sleep(3)
