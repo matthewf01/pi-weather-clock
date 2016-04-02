@@ -1,7 +1,4 @@
 #weather script
-working_dir="/home/pi/Documents/pi-weather-clock/"
-weather_conditions_json="weatherconditions.json"
-#weather_forecast_json="weatherforecast.json"
 
 import json
 import time
@@ -39,9 +36,13 @@ lcd_rows    = 2
 lcd = LCD.Adafruit_CharLCD(lcd_rs, lcd_en, lcd_d4, lcd_d5, lcd_d6, lcd_d7, 
                            lcd_columns, lcd_rows, lcd_backlight)
 
+#set paths to files
+working_dir="/home/pi/Documents/pi-weather-clock/"
+weather_conditions_json="weatherconditions.json"
+#weather_forecast_json="weatherforecast.json"
+conditions_api_file = working_dir + weather_conditions_json
+#forecast_api_file = working_dir + weather_forecast_json
 os.chdir(working_dir)
-
-api_file = working_dir + weather_conditions_json
 
 
 def LCD_disable():
@@ -66,17 +67,36 @@ def Clock_display():
   hour = now.hour
   minute = now.minute
   second = now.second
-  lcd.home()
-  #LCD_ready()
+  LCD_ready()
   currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
-  lcd.message(currenttime)
   time.sleep(1)
 
+#JSON parsing
+def read_json_conditions():
+  while(True):
+   json_cond_text = open(conditions_api_file)
+   parsed_cond_json = json.load(json_cond_text)
+   weather = parsed_cond_json['current_observation']['weather']
+   tempf = str(parsed_cond_json['current_observation']['temp_f'])
+   time.sleep(60)
+   
+
+#write to display
+def lcd_show_data():
+ while(True):
+  LCD_ready()
+  lcd.set_cursor(0,1)
+  lcd.message(currenttime)
+  lcd.set_cursor(1,1)
+  lcd.message("{},{}degF`".format(weather,tempf))
+  time.sleep(1)
 #####################################################
 
 LCD_enable()
 LCD_ready()
 Clock_display()
+read_json_conditions()
+lcd_show_data()
 
 #####################################################
 gpio.cleanup()
