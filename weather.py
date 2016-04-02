@@ -43,6 +43,7 @@ os.chdir(working_dir)
 
 api_file = working_dir + weather_conditions_json
 
+lcd.clear
 lcd.autoscroll(True)
 lcd.message(working_dir)
 
