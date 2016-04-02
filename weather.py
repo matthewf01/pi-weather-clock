@@ -94,7 +94,7 @@ def lcd_show_data():
   time.sleep(1)
 #####################################################
 
-time.sleep(60)
+time.sleep(3)
 LCD_enable()
 LCD_ready()
 Clock_display()
