@@ -68,7 +68,7 @@ def Clock_display():
   minute = now.minute
   second = now.second
   currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
-  print(currenttime)
+  # print(currenttime)
   time.sleep(1)
 
 '''
@@ -88,9 +88,10 @@ def read_json_conditions():
 def lcd_show_data():
  while(True):
   LCD_ready()
-  lcd.set_cursor(0,1)
+  #lcd.set_cursor(0,1)
   lcd.message(currenttime)
-  lcd.set_cursor(1,1)
+  print ("wrote to lcd")
+  #lcd.set_cursor(1,1)
 #  lcd.message("{},{}degF`".format(weather,tempf))
   time.sleep(1)
 #####################################################
