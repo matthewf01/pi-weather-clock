@@ -69,6 +69,7 @@ def Clock_display():
   hour = now.hour
   minute = now.minute
   second = now.second
+  global currenttime
   currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
   # print(currenttime)
   time.sleep(1)
