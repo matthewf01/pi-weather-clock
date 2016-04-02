@@ -10,6 +10,6 @@ def bar():
   print ("bar")
   time.sleep(2)
   
- while(True):
-  foo()
-  bar()
+while(True):
+ foo()
+ bar()
