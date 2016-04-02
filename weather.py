@@ -79,6 +79,7 @@ def read_json_conditions():
    weather = parsed_cond_json['current_observation']['weather']
    tempf = str(parsed_cond_json['current_observation']['temp_f'])
    print("{} -- READ FILE: {}".format(currenttime,conditions_api_file))
+   print("{} -- {}degF".format(weather,tempf))
    time.sleep(60)
    
 
