@@ -85,7 +85,7 @@ def read_json_conditions():
    weather = parsed_cond_json['current_observation']['weather']
    tempf = str(parsed_cond_json['current_observation']['temp_f'])
    print("{} -- READ FILE: {}".format(currenttime,conditions_api_file))
-   print("{} -- {}degF".format(weather,tempf))
+   print("{} -- {}`F".format(weather,tempf))
    time.sleep(60)
 
 
@@ -93,11 +93,11 @@ def read_json_conditions():
 def lcd_show_data():
  while(True):
   LCD_ready()
-  lcd.set_cursor(0,1)
+  lcd.set_cursor(0,0)
   lcd.message(currenttime)
   print ("wrote to lcd")
-  lcd.set_cursor(1,1)
-  lcd.message("{},{}degF`".format(weather,tempf))
+  lcd.set_cursor(0,1)
+  lcd.message("{},{}F".format(weather,tempf))
   time.sleep(1)
 #####################################################
 
