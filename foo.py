@@ -11,5 +11,5 @@ def bar():
   time.sleep(2)
   
 while(True):
- foo()
- bar()
+ foo() &
+ bar() &
