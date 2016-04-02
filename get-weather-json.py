@@ -15,7 +15,7 @@ def urlget():
   datenow = time.strftime("%x")
   urllib.urlretrieve(weather_conditions_url, weather_working_dir)
   print("{} | {} || Weather Condition JSON retrieved for {}/{}".format(datenow, timenow, weather_state,weather_city))
-  time.sleep(900)
+  time.sleep(15)
 
 while True:
   urlget()
