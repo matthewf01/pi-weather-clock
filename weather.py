@@ -43,6 +43,17 @@ os.chdir(working_dir)
 
 api_file = working_dir + weather_conditions_json
 
+#Clock logic
+def Clock_display():
+ while(True):
+  now = datetime.datetime.now()
+  hour = now.hour
+  minute = now.minute
+  second = now.second
+  lcd(ready()
+  currenttime="TIME: {}:{}::{}".format(hour,minute,second) 
+  lcd.message(currenttime)
+  time.sleep(1)
 
 def LCD_disable():
  lcd.clear()
@@ -58,10 +69,12 @@ def LCD_enable():
 def LCD_ready():
  lcd.clear()
  lcd.home()
- 
+#####################################################
+
 LCD_enable()
 LCD_ready()
-lcd.message(time.strftime("%x"))
+Clock_display()
 
+#####################################################
 gpio.cleanup()
 
