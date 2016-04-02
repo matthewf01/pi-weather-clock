@@ -43,7 +43,25 @@ os.chdir(working_dir)
 
 api_file = working_dir + weather_conditions_json
 
-lcd.clear
-lcd.autoscroll(True)
-lcd.message(working_dir)
+
+def LCD_disable():
+ lcd.clear()
+ lcd.set_backlight(0)
+ lcd.enable_display(False)
+ 
+def LCD_enable():
+ lcd.enable_display(True)
+ lcd.clear()
+ lcd.home()
+ lcd.set_backlight(1)
+
+def LCD_ready():
+ lcd.clear()
+ lcd.home()
+ 
+LCD_enable()
+LCD_ready()
+lcd.message(time.strftime("%x"))
+
+gpio.cleanup()
 
