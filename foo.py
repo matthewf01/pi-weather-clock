@@ -1,4 +1,6 @@
 import time
+import threading
+from threading import Thread
 
 def foo():
  while(True):
@@ -10,6 +12,7 @@ def bar():
   print ("bar")
   time.sleep(2)
   
-while(True):
- foo() &
- bar() &
+
+if __name__ == '__main__':
+    Thread(target = foo).start()
+    Thread(target = bar).start()
