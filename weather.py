@@ -87,7 +87,7 @@ def read_json_conditions():
 #write to display
 def lcd_show_data():
  while(True):
-  LCD_ready()
+  #LCD_ready()
   #lcd.set_cursor(0,1)
   lcd.message(currenttime)
   print ("wrote to lcd")
