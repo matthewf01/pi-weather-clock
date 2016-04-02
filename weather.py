@@ -1,5 +1,5 @@
 #weather script
-
+print("starting...")
 import json
 import time
 import math
