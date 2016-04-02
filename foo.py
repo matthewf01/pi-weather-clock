@@ -1,8 +1,15 @@
 import time
 
 def foo():
-  print ("tick")
-  time.sleep(5)
+ While(True):
+  print ("foo")
+  time.sleep(2)
   
-while True:
+def bar():
+ While(True):
+  print ("bar")
+  time.sleep(2)
+  
+  
   foo()
+  bar()
