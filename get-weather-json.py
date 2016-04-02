@@ -13,7 +13,7 @@ weather_working_dir = "/home/pi/Documents/pi-weather-clock/weatherconditions.jso
 def urlget(): 
   timenow = time.strftime("%X")
   datenow = time.strftime("%x")
-  urllib.urlretrieve(weather_conditions_url, weather_working_dir)
+  #urllib.urlretrieve(weather_conditions_url, weather_working_dir)
   print("{} | {} || Weather Condition JSON retrieved for {}/{}".format(datenow, timenow, weather_state,weather_city))
   time.sleep(15)
 
