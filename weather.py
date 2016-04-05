@@ -78,16 +78,15 @@ def Clock_display():
 
 #JSON parsing
 def read_json_conditions():
-  while(True):
-   json_cond_text = open(conditions_api_file)
-   parsed_cond_json = json.load(json_cond_text)
-   global weather
-   global tempf
-   weather = parsed_cond_json['current_observation']['weather']
-   tempf = str(parsed_cond_json['current_observation']['temp_f'])
-   print("READ FILE: {}".format(conditions_api_file))
-   print("{} -- {}`F".format(weather,tempf))
-   weather_aging=0
+  json_cond_text = open(conditions_api_file)
+  parsed_cond_json = json.load(json_cond_text)
+  global weather
+  global tempf
+  weather = parsed_cond_json['current_observation']['weather']
+  tempf = str(parsed_cond_json['current_observation']['temp_f'])
+  print("READ FILE: {}".format(conditions_api_file))
+  print("{} -- {}`F".format(weather,tempf))
+  weather_aging=0
 
 
 #write to display
