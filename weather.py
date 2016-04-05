@@ -1,5 +1,5 @@
 #weather script
-print("starting...")
+
 import json
 import time
 import math
@@ -102,6 +102,7 @@ def lcd_show_data():
 #####################################################
 
 #initialize everything
+print("initializing...")
 LCD_enable()
 read_json_conditions()
 weather_aging=0
@@ -112,8 +113,10 @@ def main():
   weather_aging=weather_aging + 1
   if weather_aging > weather_aging_refresh
    read_json_conditions()
+   print ("Reading from JSON")
   LCD_ready()
   time.sleep(1)
+  print currenttime
 
 
 if __name__ == '__main__':
