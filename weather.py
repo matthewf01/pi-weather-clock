@@ -85,7 +85,7 @@ def read_json_conditions():
    global tempf
    weather = parsed_cond_json['current_observation']['weather']
    tempf = str(parsed_cond_json['current_observation']['temp_f'])
-   print("{} -- READ FILE: {}".format(conditions_api_file))
+   print("READ FILE: {}".format(conditions_api_file))
    print("{} -- {}`F".format(weather,tempf))
    weather_aging=0
 
