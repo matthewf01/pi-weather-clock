@@ -108,6 +108,7 @@ weather_aging=0
 weather_aging_refresh=120 #how many S to re-read the weather JSON file
 
 def main():
+ While True:
  # Main program block
   weather_aging=weather_aging + 1
   if weather_aging > weather_aging_refresh:
@@ -129,7 +130,7 @@ if __name__ == '__main__':
 
   finally:
 
-    lcd_ready()
+    LCD_ready()
     GPIO.cleanup()
 
 #####################################################
