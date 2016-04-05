@@ -87,6 +87,7 @@ def read_json_conditions():
   print("READ FILE: {}".format(conditions_api_file))
   print("{} -- {}`F".format(weather,tempf))
   weather_aging=0
+  return
 
 
 #write to display
