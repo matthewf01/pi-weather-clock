@@ -12,6 +12,9 @@ from threading import Thread
 #imports modules for 16x2 character LCD
 import Adafruit_CharLCD as LCD
 
+weather_aging=0
+weather_aging_refresh=120 #how many S to re-read the weather JSON file
+
 ''' uncomment when using OLED
 #imports modules for OLED display
 import Adafruit_GPIO.SPI as SPI
@@ -104,8 +107,6 @@ def lcd_show_data():
 print("initializing...")
 LCD_enable()
 read_json_conditions()
-weather_aging=0
-weather_aging_refresh=120 #how many S to re-read the weather JSON file
 
 def main():
  while (True):
