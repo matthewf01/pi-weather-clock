@@ -108,7 +108,7 @@ read_json_conditions()
 def main():
  while (True):
  # Main program block
- global weather_aging
+  global weather_aging
   weather_aging=weather_aging + 1
   if weather_aging > weather_aging_refresh:
    read_json_conditions()
