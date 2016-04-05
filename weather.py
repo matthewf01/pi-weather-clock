@@ -120,7 +120,7 @@ def main():
 
 
 weather_aging=0
-weather_aging_refresh=120 #how many S to re-read the weather JSON file
+weather_aging_refresh=30 #how many S to re-read the weather JSON file
 
 if __name__ == '__main__':
 
