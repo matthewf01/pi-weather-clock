@@ -111,7 +111,7 @@ weather_aging_refresh=120 #how many S to re-read the weather JSON file
 def main():
  # Main program block
   weather_aging=weather_aging + 1
-  if weather_aging > weather_aging_refresh
+  if weather_aging > weather_aging_refresh:
    read_json_conditions()
    print ("Reading from JSON")
   LCD_ready()
