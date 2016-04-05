@@ -117,8 +117,6 @@ def main():
   LCD_ready()
   lcd.message((datetime.datetime.now().strftime('%b %d  %H:%M:%S\n'))
   time.sleep(1)
-  
-
 
 if __name__ == '__main__':
 
