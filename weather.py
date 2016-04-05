@@ -12,9 +12,6 @@ from threading import Thread
 #imports modules for 16x2 character LCD
 import Adafruit_CharLCD as LCD
 
-weather_aging=0
-weather_aging_refresh=120 #how many S to re-read the weather JSON file
-
 ''' uncomment when using OLED
 #imports modules for OLED display
 import Adafruit_GPIO.SPI as SPI
@@ -123,6 +120,9 @@ if __name__ == '__main__':
 
   try:
 
+
+    weather_aging=0
+    weather_aging_refresh=120 #how many S to re-read the weather JSON file
     main()
 
   except KeyboardInterrupt:
