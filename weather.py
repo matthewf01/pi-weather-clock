@@ -3,6 +3,7 @@ print("starting...")
 import json
 import time
 import math
+import RPi.GPIO as GPIO
 import datetime
 import os
 import threading
@@ -86,7 +87,7 @@ def read_json_conditions():
    tempf = str(parsed_cond_json['current_observation']['temp_f'])
    print("{} -- READ FILE: {}".format(currenttime,conditions_api_file))
    print("{} -- {}`F".format(weather,tempf))
-   time.sleep(60)
+   weather_aging=0
 
 
 #write to display
@@ -100,16 +101,35 @@ def lcd_show_data():
   time.sleep(10)
 #####################################################
 
-time.sleep(3)
+#initialize everything
 LCD_enable()
-LCD_ready()
 read_json_conditions()
+weather_aging=0
+weather_aging_refresh=120 #how many S to re-read the weather JSON file
+
+def main():
+ # Main program block
+  weather_aging=weather_aging + 1
+  if weather_aging > weather_aging_refresh
+   read_json_conditions()
+  LCD_ready()
+  time.sleep(1)
+
 
 if __name__ == '__main__':
-    Thread(target = Clock_display).start()
-    Thread(target = read_json_conditions).start()
-    Thread(target = lcd_show_data).start()
 
+  try:
+
+    main()
+
+  except KeyboardInterrupt:
+
+    pass
+
+  finally:
+
+    lcd_ready()
+    GPIO.cleanup()
 
 #####################################################
 
