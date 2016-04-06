@@ -38,4 +38,4 @@ while True:
         os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Blue pressed")
  
-    sleep(0.1);
+    sleep(1);
