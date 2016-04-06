@@ -22,16 +22,16 @@ retval = os.getcwd()
 print "Current working directory %s" % retval
 
 while True:
-    if (GPIO.input(5) == False):
+    if (GPIO.input(5) == True):
         os.system('mpg123 -q Zelda_Theme.mp3 &')
  
-    if (GPIO.input(6) == False):
+    if (GPIO.input(6) == True):
         os.system('mpg123 -q Zelda_Theme.mp3 &')
  
-    if (GPIO.input(13)== False):
+    if (GPIO.input(13)== True):
         os.system('mpg123 -q Zelda_Theme.mp3 &')
         
-    if (GPIO.input(19)== False):
+    if (GPIO.input(19)== True):
         os.system('mpg123 -q Zelda_Theme.mp3 &')
  
     sleep(0.1);
