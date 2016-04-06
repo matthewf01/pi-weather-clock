@@ -88,7 +88,7 @@ def read_json_conditions():
   print("{} -- {}`F".format(weather,tempf))
   global weather_aging
   weather_aging=0
-  main()
+  return
 
 #write to display
 def lcd_show_data():
