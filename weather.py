@@ -105,7 +105,7 @@ def lcd_show_data():
 print("initializing...")
 LCD_enable()
 LCD_ready()
-LCD.set_cursor(0,0)
+lcd.set_cursor(0,0)
 lcd.message("Retrieving weather...")
 read_json_conditions()
 weather_aging=0
