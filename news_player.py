@@ -16,10 +16,10 @@ sound_file_path = "/home/pi/Music/test"
 sound_file_1="Zelda_Theme.mp3"
 
 # Check current working directory.
+# Now change the directory
+os.chdir(sound_file_path)
 retval = os.getcwd()
 print "Current working directory %s" % retval
-# Now change the directory
-os.chdir( path )
 
 while True:
     if (GPIO.input(5) == False):
