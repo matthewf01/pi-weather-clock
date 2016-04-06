@@ -11,6 +11,7 @@ from threading import Thread
  
 #imports modules for 16x2 character LCD
 import Adafruit_CharLCD as LCD
+GPIO.setmode(GPIO.BCM)
 
 ''' uncomment when using OLED
 #imports modules for OLED display
