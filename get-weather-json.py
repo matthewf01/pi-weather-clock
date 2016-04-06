@@ -16,7 +16,7 @@ def urlget():
   #UNCOMMENT THIS WHEN READY TO PULL NEW WEATHER DATA; COMMENTED OUT FOR TESTING
   urllib.urlretrieve(weather_conditions_url, weather_working_dir)
   print("{} | {} || Weather Condition JSON retrieved for {}/{}".format(datenow, timenow, weather_state,weather_city))
-  time.sleep(900)
+  time.sleep(600)
 
 while True:
   urlget()
