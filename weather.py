@@ -119,7 +119,7 @@ def main():
    read_json_conditions()
    break
   else:
-   LCD_ready()
+   #LCD_ready()
    lcd.message((datetime.datetime.now().strftime('%b %d  %H:%M:%S\n')))
    time.sleep(1)
 
