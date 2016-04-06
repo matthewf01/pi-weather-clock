@@ -118,6 +118,8 @@ def main():
   if weather_aging > weather_aging_refresh:
    print ("Reading from JSON")
    read_json_conditions()
+   lcd.set_cursor(0,1)
+   lcd.message("{},{}F".format(weather,tempf))
    break
   else:
    #LCD_ready()
