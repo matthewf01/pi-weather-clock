@@ -49,7 +49,7 @@ os.chdir(working_dir)
 
 
 def LCD_disable():
-# lcd.clear()
+ lcd.clear()
  lcd.set_backlight(0)
  lcd.enable_display(False)
  
@@ -127,14 +127,7 @@ def main():
 #if __name__ == '__main__':
 
 while (True):
-  try:
-    main()
-  except KeyboardInterrupt:
-    pass
-  finally:
-    LCD_disable()
-    print("EXITING!")
-    GPIO.cleanup()
+ main()
 
 #####################################################
 
