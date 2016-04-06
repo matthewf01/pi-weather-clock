@@ -124,19 +124,14 @@ def main():
    time.sleep(1)
 
 
+#if __name__ == '__main__':
 
-if __name__ == '__main__':
-
+while (True):
   try:
-
     main()
-
   except KeyboardInterrupt:
-
     pass
-
   finally:
-
     LCD_disable()
     print("EXITING!")
     GPIO.cleanup()
