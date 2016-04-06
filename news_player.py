@@ -27,15 +27,15 @@ while True:
         print ("Green pressed")
  
     if (GPIO.input(6) == True):
-        os.system('mpg123 -q Zelda_Theme.mp3 &')
+        #os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Red pressed")
  
     if (GPIO.input(13)== True):
-        os.system('mpg123 -q Zelda_Theme.mp3 &')
+        #os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Yellow pressed")
         
     if (GPIO.input(19)== True):
-        os.system('mpg123 -q Zelda_Theme.mp3 &')
+        #os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Blue pressed")
  
-    sleep(1);
+    sleep(0.1);
