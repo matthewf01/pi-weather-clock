@@ -30,7 +30,7 @@ retval = os.getcwd()
 print "Current working directory %s" % retval
 
 while True:
-    request=raw_input(RGB-->")
+    request=raw_input("RGB-->")
     if (len(request) == 3):
      GPIO.output(16,int(request[0]))
      GPIO.output(20,int(request[1]))
