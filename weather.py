@@ -119,7 +119,7 @@ def main():
    print ("Reading from JSON")
    read_json_conditions()
    lcd.set_cursor(0,1)
-   lcd.message("{},{}F".format(weather,tempf))
+   lcd.message("It's {},{}{}F".format(weather,tempf,chr(223)))
    break
   else:
    #LCD_ready()
