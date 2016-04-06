@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #weather script
 
 import json
