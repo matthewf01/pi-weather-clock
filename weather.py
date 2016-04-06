@@ -86,9 +86,8 @@ def read_json_conditions():
   tempf = str(parsed_cond_json['current_observation']['temp_f'])
   print("READ FILE: {}".format(conditions_api_file))
   print("{} -- {}`F".format(weather,tempf))
+  global weather_aging
   weather_aging=0
-  break
-
 
 #write to display
 def lcd_show_data():
@@ -117,6 +116,7 @@ def main():
   if weather_aging > weather_aging_refresh:
    print ("Reading from JSON")
    read_json_conditions()
+   break
   else:
    LCD_ready()
    lcd.message((datetime.datetime.now().strftime('%b %d  %H:%M:%S\n')))
