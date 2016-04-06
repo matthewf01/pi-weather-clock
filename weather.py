@@ -104,6 +104,7 @@ def lcd_show_data():
 #initialize everything
 print("initializing...")
 LCD_enable()
+LCD_ready()
 read_json_conditions()
 weather_aging=0
 weather_aging_refresh=30 #how many S to re-read the weather JSON file
@@ -120,7 +121,7 @@ def main():
    break
   else:
    #LCD_ready()
-   lcd.message((datetime.datetime.now().strftime('%b %d  %H:%M:%S\n')))
+   lcd.message((datetime.datetime.now().strftime('%b %d  %I:%M:%p')))
    time.sleep(1)
 
 
