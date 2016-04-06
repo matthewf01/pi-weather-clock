@@ -13,7 +13,7 @@ GPIO.setup(13, GPIO.IN)
 GPIO.setup(19, GPIO.IN)
 
 sound_file_path = "/home/pi/Music/test"
-
+sound_file_zelda ="Zelda_Theme.mp3"
 
 # Check current working directory.
 # Now change the directory
@@ -23,23 +23,23 @@ print "Current working directory %s" % retval
 
 while True:
     if (GPIO.input(5) == True):
-        os.system('mpg123 -q Zelda_Theme.mp3 &')
+        os.system('mpg123 -q sound_file_zelda &')
         print ("Green pressed")
-        time.sleep(2)
+        time.sleep(1)
  
     if (GPIO.input(6) == True):
         #os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Red pressed")
-        time.sleep(2)
+        time.sleep(1)
  
     if (GPIO.input(13)== True):
         #os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Yellow pressed")
-        time.sleep(2)
+        time.sleep(1)
         
     if (GPIO.input(19)== True):
         #os.system('mpg123 -q Zelda_Theme.mp3 &')
         print ("Blue pressed")
-        time.sleep(2)
+        time.sleep(1)
  
     sleep(0.1);
