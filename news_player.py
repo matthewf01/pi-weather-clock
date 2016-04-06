@@ -36,7 +36,7 @@ while True:
      GPIO.output(20,int(request[1]))
      GPIO.output(21,int(request[2]))
      
- '''
+'''
     if (GPIO.input(5) == True):
         os.system('mpg123 -q sound_file_zelda &')
         print ("Green pressed")
