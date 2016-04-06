@@ -60,20 +60,6 @@ def LCD_enable():
 def LCD_ready():
  lcd.clear()
  lcd.home()
- 
-'''
-#Clock logic
-def Clock_display():
- while(True):
-  now = datetime.datetime.now()
-  hour = now.hour
-  minute = now.minute
-  second = now.second
-  global currenttime
-  currenttime="TIME: {}:{}".format(hour,minute) 
-  # print(currenttime)
-  time.sleep(1)
-'''
 
 #JSON parsing
 def read_json_conditions():
