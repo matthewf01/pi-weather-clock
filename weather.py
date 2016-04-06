@@ -121,8 +121,8 @@ def main():
    break
   else:
    #LCD_ready()
-   lcd.set_cursor(0,1)
-   lcd.message((datetime.datetime.now().strftime('%b %d  %I:%M:%p')))
+   lcd.set_cursor(0,0)
+   lcd.message((datetime.datetime.now().strftime('%b %d  %I:%M %p')))
    time.sleep(1)
 
 
