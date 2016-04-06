@@ -106,7 +106,7 @@ print("initializing...")
 LCD_enable()
 LCD_ready()
 LCD.set_cursor(0,0)
-lcd.message("Retrieving weather...)
+lcd.message("Retrieving weather...")
 read_json_conditions()
 weather_aging=0
 weather_aging_refresh=30 #how many S to re-read the weather JSON file
