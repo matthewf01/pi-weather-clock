@@ -41,13 +41,13 @@ print "Current working directory %s" % retval
 
 
 while True:
-'''
+ '''
     request=raw_input("RGB-->")
     if (len(request) == 3):
      GPIO.output(16,int(request[0]))
      GPIO.output(20,int(request[1]))
      GPIO.output(21,int(request[2]))
-'''
+ '''
 
     if (GPIO.input(5) == True):
         #os.system('mpg123 -q sound_file_zelda &')
