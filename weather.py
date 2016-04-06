@@ -97,7 +97,7 @@ def lcd_show_data():
   lcd.set_cursor(0,0)
   lcd.message(currenttime)
   lcd.set_cursor(0,1)
-  lcd.message("{},{}F".format(weather,tempf))
+  lcd.message("It's {},{}{}F".format(weather,tempf,chr(223)))
   time.sleep(10)
 #####################################################
 
