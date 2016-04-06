@@ -84,7 +84,7 @@ LCD_ready()
 lcd.set_cursor(0,1)
 lcd.message("Checking weather")
 read_json_conditions()
-weather_aging_refresh=30 #how many S to re-read the weather JSON file
+weather_aging_refresh=60 #how many S to re-read the weather JSON file. JSON file pulled in a configurable interval in get-weather-json.py
 weather_aging=weather_aging_refresh -2
 
 def main():
