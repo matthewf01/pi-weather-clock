@@ -86,9 +86,8 @@ weather_aging_refresh=30 #how many S to re-read the weather JSON file
 weather_aging=weather_aging_refresh -2
 
 import subprocess
-os.chdir(working_dir)
 cmd = 'get-weather-json.py'
-p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True,cwd=working_dir)
 out, err = p.communicate() 
 result = out.split('\n')
 for lin in result:
