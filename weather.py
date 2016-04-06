@@ -6,9 +6,7 @@ import math
 import RPi.GPIO as GPIO
 import datetime
 import os
-import threading
-from threading import Thread
- 
+
 #imports modules for 16x2 character LCD
 import Adafruit_CharLCD as LCD
 
@@ -63,6 +61,7 @@ def LCD_ready():
  lcd.clear()
  lcd.home()
  
+'''
 #Clock logic
 def Clock_display():
  while(True):
@@ -74,7 +73,7 @@ def Clock_display():
   currenttime="TIME: {}:{}".format(hour,minute) 
   # print(currenttime)
   time.sleep(1)
-
+'''
 
 #JSON parsing
 def read_json_conditions():
@@ -90,25 +89,16 @@ def read_json_conditions():
   weather_aging=0
   return
 
-#write to display
-def lcd_show_data():
- while(True):
-  LCD_ready()
-  lcd.set_cursor(0,0)
-  lcd.message(currenttime)
-  lcd.set_cursor(0,1)
-  lcd.message("It's {},{}{}F".format(weather,tempf,chr(223)))
-  time.sleep(10)
 #####################################################
 
 #initialize everything
 print("initializing...")
 LCD_enable()
 LCD_ready()
-lcd.set_cursor(3,1)
+lcd.set_cursor(0,1)
 lcd.message("Checking weather")
 read_json_conditions()
-weather_aging=0
+weather_aging=weather_aging_refresh -1
 weather_aging_refresh=30 #how many S to re-read the weather JSON file
 
 def main():
