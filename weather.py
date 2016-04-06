@@ -98,6 +98,7 @@ def main():
    read_json_conditions()
    LCD_ready()
    lcd.set_cursor(0,1)
+   lcd.autoscroll(True)
    lcd.message("{}, {}{}F".format(weather,tempf,chr(223)))
    break
   else:
