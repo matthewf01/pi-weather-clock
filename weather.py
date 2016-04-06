@@ -105,6 +105,8 @@ def lcd_show_data():
 print("initializing...")
 LCD_enable()
 read_json_conditions()
+weather_aging=0
+weather_aging_refresh=30 #how many S to re-read the weather JSON file
 
 def main():
  while (True):
@@ -112,15 +114,14 @@ def main():
   global weather_aging
   weather_aging=weather_aging + 1
   if weather_aging > weather_aging_refresh:
-   read_json_conditions()
    print ("Reading from JSON")
-  LCD_ready()
-  lcd.message((datetime.datetime.now().strftime('%b %d  %H:%M:%S\n')))
-  time.sleep(1)
+   read_json_conditions()
+  else:
+   LCD_ready()
+   lcd.message((datetime.datetime.now().strftime('%b %d  %H:%M:%S\n')))
+   time.sleep(1)
 
 
-weather_aging=0
-weather_aging_refresh=30 #how many S to re-read the weather JSON file
 
 if __name__ == '__main__':
 
@@ -134,7 +135,8 @@ if __name__ == '__main__':
 
   finally:
 
-    LCD_ready()
+    LCD_disable()
+    print("EXITING!")
     GPIO.cleanup()
 
 #####################################################
