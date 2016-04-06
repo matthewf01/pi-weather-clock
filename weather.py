@@ -43,8 +43,6 @@ weather_conditions_json="weatherconditions.json"
 #weather_forecast_json="weatherforecast.json"
 conditions_api_file = working_dir + weather_conditions_json
 #forecast_api_file = working_dir + weather_forecast_json
-os.chdir(working_dir)
-
 
 def LCD_disable():
  lcd.clear()
@@ -88,6 +86,7 @@ weather_aging_refresh=30 #how many S to re-read the weather JSON file
 weather_aging=weather_aging_refresh -2
 
 import subprocess
+os.chdir(working_dir)
 cmd = 'get-weather-json.py'
 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
 out, err = p.communicate() 
