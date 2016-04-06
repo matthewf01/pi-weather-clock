@@ -87,6 +87,15 @@ read_json_conditions()
 weather_aging_refresh=30 #how many S to re-read the weather JSON file
 weather_aging=weather_aging_refresh -2
 
+import subprocess
+cmd = 'get-weather-json.py'
+p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+out, err = p.communicate() 
+result = out.split('\n')
+for lin in result:
+    if not lin.startswith('#'):
+        print(lin)
+
 def main():
  while (True):
  # Main program block
