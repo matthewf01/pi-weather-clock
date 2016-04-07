@@ -41,6 +41,11 @@ print "Current working directory %s" % retval
 
 
 while True:
+   
+   GPIO.output(16,0)
+   GPIO.output(20,0)
+   GPIO.output(21,0)
+  
   if (GPIO.input(5) == True):
    #os.system('mpg123 -q sound_file_zelda &')
    print ("Green pressed")
