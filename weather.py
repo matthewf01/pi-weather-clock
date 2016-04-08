@@ -70,7 +70,7 @@ def read_json_conditions():
   weather = parsed_cond_json['current_observation']['weather']
   tempf = str(parsed_cond_json['current_observation']['temp_f'])
   obs_time=str(parsed_cond_json['current_observation']['observation_time'])
-  weatherdisplay=("{} -- {}`F -- {}".format(weather,tempf,obs_time))
+  weatherdisplay=("{}, {}{}F".format(weather,tempf,chr(223)))
   timenow = time.strftime("%X")
   datenow = time.strftime("%x")
   print("{} {} READ FILE: {}".format(timenow,datenow,conditions_api_file))
