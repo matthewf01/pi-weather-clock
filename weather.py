@@ -66,6 +66,7 @@ def read_json_conditions():
   parsed_cond_json = json.load(json_cond_text)
   global weather
   global tempf
+  global weatherdisplay
   weather = parsed_cond_json['current_observation']['weather']
   tempf = str(parsed_cond_json['current_observation']['temp_f'])
   obs_time=str(parsed_cond_json['current_observation']['observation_time'])
